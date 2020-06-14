@@ -1,6 +1,7 @@
 package com.hrms.utils;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +23,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.hrms.testbase.PageInitializer;
 
 public class CommonMethods extends PageInitializer {
-
+	public static String destinationfile = "";
 	/**
 	 * Method that clears and sends keys
 	 * 
@@ -281,4 +282,23 @@ public class CommonMethods extends PageInitializer {
 			e.printStackTrace();
 		}
 	}
+	/**
+	 * This Method will take screen shot
+	 * 
+	 * @param fileName
+	 * @return byte[] of the screenshot.
+	 */
+	public static byte[] takeScreenShotCucumber(String fileName) {
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		byte[] picByte = ts.getScreenshotAs(OutputType.BYTES);
+		File sourceFile = ts.getScreenshotAs(OutputType.FILE);
+		destinationfile = Constants.SCREENSHOT_FILEPATH + fileName + getTimeStemp() + ".png";
+		try {
+			FileUtils.copyFile(sourceFile, new File(destinationfile));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return picByte;
+	}
 }
+

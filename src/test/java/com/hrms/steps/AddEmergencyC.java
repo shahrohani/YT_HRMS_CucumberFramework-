@@ -28,8 +28,8 @@ public class AddEmergencyC extends CommonMethods{
 	   
 	}
 
-	@Given("clik on employee id")
-	public void clik_on_employee_id() {
+	@Given("click on employee id")
+	public void click_on_employee_id() {
 	   jsClick(emergency.clickemp);
 	}
 

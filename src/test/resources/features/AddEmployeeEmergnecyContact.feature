@@ -5,7 +5,7 @@ Feature: Add Employee Emergency Contacts
     Given As an admin I should be able to logged in
     And click on employee list through PIM
     And enter id "12589" and click on search
-    And clik on employee id
+    And click on employee id
     And click on emergency contacts and click on add button
     When add emergency contacts "<Name>", "<Relationship>", "<HomeTelephone>", "<Mobile>", "<WorkTelephone>" 
     

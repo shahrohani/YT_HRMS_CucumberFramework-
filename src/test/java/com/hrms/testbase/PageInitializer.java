@@ -1,5 +1,6 @@
 package com.hrms.testbase;
 
+import com.hrms.pages.AddMembership;
 import com.hrms.pages.DashboardPageElements;
 import com.hrms.pages.EmergencyElements;
 import com.hrms.pages.LoginPageElements;
@@ -15,12 +16,14 @@ public class PageInitializer extends BaseClass{
 	
 	public static EmergencyElements emergency;
 	
+	public static AddMembership am;
+	
 	public static void initialize() {
 		
 		login=new LoginPageElements();
 		dashboard=new DashboardPageElements();
 		emergency=new EmergencyElements();
-		
+		am=new AddMembership();
 		
 	}
 }

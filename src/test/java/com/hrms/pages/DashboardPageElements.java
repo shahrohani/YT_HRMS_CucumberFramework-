@@ -28,6 +28,15 @@ public class DashboardPageElements extends CommonMethods{
 	
 	@FindBy(xpath="//div[@class='menu']/ul/li")
 	public List<WebElement> dashMenu;
+	
+	@FindBy (id="menu_admin_viewAdminModule")
+	public WebElement admin;
+	
+	@FindBy(id="menu_admin_Qualifications")
+	public WebElement qualifications;
+	
+	@FindBy(id="menu_admin_membership")
+	public WebElement membership;
 
 	public DashboardPageElements() {
 		PageFactory.initElements(BaseClass.driver, this);
@@ -36,5 +45,10 @@ public class DashboardPageElements extends CommonMethods{
 	public void navigateToAddEmployee() {
 		jsClick(PIM);
 		jsClick(addEmp);
+	}
+	public void navigateToMembership() {
+		jsClick(admin);
+		jsClick(qualifications);
+		jsClick(membership);
 	}
 }
